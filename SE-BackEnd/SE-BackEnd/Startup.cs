@@ -1,16 +1,11 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
-using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using SE_BackEnd.Context;
 
 namespace SE_BackEnd
 {
@@ -32,6 +27,12 @@ namespace SE_BackEnd
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "SE_BackEnd", Version = "v1" });
             });
+
+            services.AddCors();
+
+            var connectionString = Configuration["AppSettings:DbConnectionString"];
+            services.AddDbContext<FamilyContext>(options => options.UseMySql(connectionString,
+                ServerVersion.AutoDetect(connectionString)));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
