@@ -6,7 +6,9 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
 using SE_BackEnd.Context;
+using SE_BackEnd.Dto.MemberDtos;
 using SE_BackEnd.Repositories;
+using SE_BackEnd.Services;
 
 namespace SE_BackEnd
 {
@@ -32,6 +34,9 @@ namespace SE_BackEnd
             services.AddCors();
 
             services.AddScoped<IMemberRepository, MemberRepository>();
+            services.AddScoped<IMemberService, MemberService>();
+            services.AddTransient<MemberProfile>();
+            services.AddAutoMapper(typeof(Startup).Assembly);
 
             var connectionString = Configuration["AppSettings:DbConnectionString"];
             services.AddDbContext<FamilyContext>(options => options.UseMySql(connectionString,

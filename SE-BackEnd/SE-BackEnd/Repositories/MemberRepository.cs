@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using SE_BackEnd.Context;
@@ -15,10 +16,5 @@ public sealed class MemberRepository : Repository<Member>, IMemberRepository
     public async Task<Member> Get(Guid memberId)
     {
         return await GetQuery(e => e.Id == memberId).FirstOrDefaultAsync();
-    }
-
-    public async Task<Member> Put(Member member)
-    {
-        return await UpdateAsync(member);
     }
 }

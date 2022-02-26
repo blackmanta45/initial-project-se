@@ -1,4 +1,25 @@
+.center{
+    display: flex;
+    justify-content: center;
+    margin-top:10%;
+}
+
 button{
-    margin-left:50%;
-    margin-top:2rem;
+    width:400px;
+    height:100px;
+    
+    font-size: 20px;
+    font-weight: bold;
+}
+
+#buttonRight{
+    margin-left:100px;
+}
+
+#buttonRight:hover{
+    background-color:pink;
+}
+
+#buttonLeft:hover{
+    background-color:pink;
 }

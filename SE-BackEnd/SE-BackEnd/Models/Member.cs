@@ -5,7 +5,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace SE_BackEnd.Models
 {
     [Table("member")]
-    public sealed class Member
+    public class Member
     {
         [Required]
         [Key]
