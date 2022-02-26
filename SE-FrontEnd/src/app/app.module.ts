@@ -15,6 +15,7 @@ import {MatCardModule} from '@angular/material/card';
 import { HomeComponent } from './home/home.component';
 import { OperationsComponent } from './operations/operations.component';
 import { ConfigurationComponent } from './configuration/configuration.component';
+import { ReportComponent } from './report/report.component';
 
 const appRoutes: Routes=[
   {path:'home', component: HomeComponent},
@@ -29,7 +30,8 @@ const appRoutes: Routes=[
     NavbarComponent,
     HomeComponent,
     OperationsComponent,
-    ConfigurationComponent
+    ConfigurationComponent,
+    ReportComponent
   ],
   imports: [
     BrowserModule,
