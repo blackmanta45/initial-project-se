@@ -6,7 +6,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace SE_BackEnd.Models
 {
     [Table("transaction")]
-    public class Transaction
+    public sealed class Transaction
     {
         [Required]
         [Key]
