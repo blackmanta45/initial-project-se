@@ -1,4 +1,4 @@
-using Microsoft.AspNetCore.Builder;
+﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -35,7 +35,8 @@ namespace SE_BackEnd
 
             services.AddScoped<IMemberRepository, MemberRepository>();
             services.AddScoped<IMemberService, MemberService>();
-            services.AddTransient<MemberProfile>();
+            services.AddTransient<AddMemberRequestProfile>();
+            services.AddTransient<AddMemberResponseProfile>();
             services.AddAutoMapper(typeof(Startup).Assembly);
 
             var connectionString = Configuration["AppSettings:DbConnectionString"];

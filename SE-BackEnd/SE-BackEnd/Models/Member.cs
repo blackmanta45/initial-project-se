@@ -18,8 +18,9 @@ namespace SE_BackEnd.Models
         public int Age { get; set; }
 
         [Required]
+        [Index(IsUnique = true)]
         [StringLength(13, MinimumLength = 13)]
-        public string CNP { get; set; }
+        public string Cnp { get; set; }
 
         [Required]
         public DateTime CreatedAt { get; set; }

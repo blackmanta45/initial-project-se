@@ -11,8 +11,8 @@ using SE_BackEnd.Context;
 namespace SE_BackEnd.Migrations
 {
     [DbContext(typeof(FamilyContext))]
-    [Migration("20220225223054_InitialMigration")]
-    partial class InitialMigration
+    [Migration("20220226174717_CnpUnique")]
+    partial class CnpUnique
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

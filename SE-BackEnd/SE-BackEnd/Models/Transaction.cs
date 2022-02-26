@@ -1,7 +1,7 @@
-﻿using SE_BackEnd.Common;
-using System;
+﻿using System;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using SE_BackEnd.Common;
 
 namespace SE_BackEnd.Models
 {

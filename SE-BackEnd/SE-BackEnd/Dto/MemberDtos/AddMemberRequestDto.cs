@@ -1,9 +1,8 @@
-﻿using System;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 
-namespace SE_BackEnd.Dto
+namespace SE_BackEnd.Dto.MemberDtos
 {
-    public class AddMemberDto
+    public class AddMemberRequestDto
     {
         [Required]
         public string Name { get; set; }

@@ -28,7 +28,7 @@ namespace SE_BackEnd.Migrations
                     b.Property<int>("Age")
                         .HasColumnType("int");
 
-                    b.Property<string>("CNP")
+                    b.Property<string>("Cnp")
                         .IsRequired()
                         .HasMaxLength(13)
                         .HasColumnType("varchar(13)");

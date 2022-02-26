@@ -1,12 +1,11 @@
-﻿using AutoMapper;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
-using SE_BackEnd.Dto;
-using SE_BackEnd.Models;
-using SE_BackEnd.Services;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
+using SE_BackEnd.Dto.MemberDtos;
+using SE_BackEnd.Models;
+using SE_BackEnd.Services;
 
 namespace SE_BackEnd.Controllers
 {
@@ -15,41 +14,50 @@ namespace SE_BackEnd.Controllers
     public class MemberController : ControllerBase
     {
         private readonly IMemberService memberService;
-        private readonly IMapper mapper;
-        public MemberController(IMapper mapper,IMemberService memberService)
+
+        public MemberController(IMemberService memberService)
         {
             this.memberService = memberService;
-            this.mapper = mapper;
         }
 
         [HttpGet]
-        public async Task<IEnumerable<Member>> GetAllMembers()
-        {
-            return await memberService.GetAll();
-        }
+        public async Task<IEnumerable<Member>> GetAllMembers() => await this.memberService.GetAll();
 
         [HttpGet("{id}")]
-        public async Task<ActionResult<Member>> GetMember(Guid id)
+        public async Task<ActionResult<Member>> GetMember(Guid id) => await this.memberService.Get(id);
+
+        [HttpPut]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        public async Task<ActionResult<Member>> AddMember([FromBody] AddMemberRequestDto memberRequestDto)
         {
-            return await memberService.Get(id); 
+            if (!this.ModelState.IsValid) return this.BadRequest();
+
+            try
+            {
+                return this.Ok(await this.memberService.Add(memberRequestDto));
+            }
+            catch
+            {
+                return this.BadRequest();
+            }
         }
 
-       [HttpPost]
-       [ProducesResponseType(StatusCodes.Status200OK)]
-       [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        public async Task<ActionResult<Member>> PutMember([FromBody]AddMemberDto memberDto)
+        [HttpPost]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        public async Task<ActionResult<Member>> UpdateMember([FromBody] UpdateMemberRequestDto memberRequestDto)
         {
-            if (!ModelState.IsValid) return BadRequest();
+            if (!this.ModelState.IsValid) return this.BadRequest();
 
-            var member = this.mapper.Map<Member>(memberDto);
-            member.CreatedAt = DateTime.Now;
-            var memberResult = await memberService.Update(member);
-
-            if (memberResult == null) return BadRequest();
-
-            return Ok(mapper.Map<AddMemberDto>(memberResult));
-          
+            try
+            {
+                return this.Ok(await this.memberService.Update(memberRequestDto));
+            }
+            catch
+            {
+                return this.BadRequest();
+            }
         }
-
     }
 }
