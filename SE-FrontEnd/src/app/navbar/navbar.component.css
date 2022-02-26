@@ -1,0 +1,15 @@
+.sidenav .mat-toolbar {
+  background: inherit;
+}
+
+.mat-toolbar.mat-primary {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+
+span{
+ position:left;
+ margin-left:20px;
+}
