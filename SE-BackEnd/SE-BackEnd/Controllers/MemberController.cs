@@ -59,5 +59,20 @@ namespace SE_BackEnd.Controllers
                 return this.BadRequest();
             }
         }
+
+        [HttpDelete("{id}")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        public async Task<ActionResult<bool>> DeleteMember(Guid id)
+        {
+            try
+            {
+                return this.Ok(await this.memberService.Delete(id));
+            }
+            catch
+            {
+                return this.BadRequest();
+            }
+        }
     }
 }

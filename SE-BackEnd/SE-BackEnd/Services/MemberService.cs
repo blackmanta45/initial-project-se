@@ -43,5 +43,13 @@ namespace SE_BackEnd.Services
 
             return this.mapper.Map<UpdateMemberResponseDto>(dbMember);
         }
+
+        public async Task<bool> Delete(Guid id)
+        {
+            var member = await this._memberRepository.GetByIdAsync(id);
+            var success = await this._memberRepository.DeleteAsync(member);
+
+            return success;
+        }
     }
 }

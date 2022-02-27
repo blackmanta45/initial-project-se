@@ -7,6 +7,6 @@ public class UpdateMemberResponseProfile : Profile
 {
     public UpdateMemberResponseProfile()
     {
-        this.CreateMap<UpdateMemberResponseDto, Member>();
+        this.CreateMap<Member, UpdateMemberResponseDto>();
     }
 }

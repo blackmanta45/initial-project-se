@@ -37,6 +37,8 @@ namespace SE_BackEnd
             services.AddScoped<IMemberService, MemberService>();
             services.AddTransient<AddMemberRequestProfile>();
             services.AddTransient<AddMemberResponseProfile>();
+            services.AddTransient<UpdateMemberRequestProfile>();
+            services.AddTransient<UpdateMemberResponseProfile>();
             services.AddAutoMapper(typeof(Startup).Assembly);
 
             var connectionString = Configuration["AppSettings:DbConnectionString"];

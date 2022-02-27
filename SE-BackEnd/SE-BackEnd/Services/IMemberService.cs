@@ -12,5 +12,6 @@ namespace SE_BackEnd.Services
         Task<Member> Get(Guid memberId);
         Task<AddMemberResponseDto> Add(AddMemberRequestDto memberRequestDto);
         Task<UpdateMemberResponseDto> Update(UpdateMemberRequestDto updateMemberRequestDto);
+        Task<bool> Delete(Guid id);
     }
 }
