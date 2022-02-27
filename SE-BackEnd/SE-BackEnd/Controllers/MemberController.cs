@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using SE_BackEnd.Dto.MemberDtos;
+using SE_BackEnd.Mapping.Dto.MemberDtos;
 using SE_BackEnd.Models;
 using SE_BackEnd.Services;
 
@@ -29,7 +29,7 @@ namespace SE_BackEnd.Controllers
         [HttpPut]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        public async Task<ActionResult<Member>> AddMember([FromBody] AddMemberRequestDto memberRequestDto)
+        public async Task<ActionResult<AddMemberResponseDto>> AddMember([FromBody] AddMemberRequestDto memberRequestDto)
         {
             if (!this.ModelState.IsValid) return this.BadRequest();
 
@@ -46,7 +46,7 @@ namespace SE_BackEnd.Controllers
         [HttpPost]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        public async Task<ActionResult<Member>> UpdateMember([FromBody] UpdateMemberRequestDto memberRequestDto)
+        public async Task<ActionResult<UpdateMemberResponseDto>> UpdateMember([FromBody] UpdateMemberRequestDto memberRequestDto)
         {
             if (!this.ModelState.IsValid) return this.BadRequest();
 
@@ -67,7 +67,8 @@ namespace SE_BackEnd.Controllers
         {
             try
             {
-                return this.Ok(await this.memberService.Delete(id));
+                await this.memberService.Delete(id);
+                return this.Ok();
             }
             catch
             {

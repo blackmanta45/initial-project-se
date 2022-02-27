@@ -11,7 +11,7 @@ namespace SE_BackEnd.Repositories
     public class Repository<T> : IRepository<T>
         where T : class, new()
     {
-        protected readonly FamilyContext DbContext;
+        private readonly FamilyContext DbContext;
 
         public Repository(FamilyContext dbContext)
         {

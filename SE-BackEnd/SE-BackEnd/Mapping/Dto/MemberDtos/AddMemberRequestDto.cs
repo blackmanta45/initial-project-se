@@ -1,8 +1,8 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace SE_BackEnd.Dto.MemberDtos
+namespace SE_BackEnd.Mapping.Dto.MemberDtos
 {
-    public class AddMemberRequestDto
+    public sealed class AddMemberRequestDto
     {
         [Required]
         public string Name { get; set; }

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using AutoMapper;
-using SE_BackEnd.Dto.MemberDtos;
+using SE_BackEnd.Mapping.Dto.MemberDtos;
 using SE_BackEnd.Models;
 using SE_BackEnd.Repositories;
 
@@ -44,12 +44,11 @@ namespace SE_BackEnd.Services
             return this.mapper.Map<UpdateMemberResponseDto>(dbMember);
         }
 
-        public async Task<bool> Delete(Guid id)
+        public async Task Delete(Guid id)
         {
             var member = await this._memberRepository.GetByIdAsync(id);
-            var success = await this._memberRepository.DeleteAsync(member);
-
-            return success;
+            member.IsDeleted = true;
+            await this._memberRepository.UpdateAsync(member);
         }
     }
 }

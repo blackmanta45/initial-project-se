@@ -6,7 +6,8 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
 using SE_BackEnd.Context;
-using SE_BackEnd.Dto.MemberDtos;
+using SE_BackEnd.Mapping.Dto.MemberDtos;
+using SE_BackEnd.Mapping.Dto.TransactionDtos;
 using SE_BackEnd.Repositories;
 using SE_BackEnd.Services;
 
@@ -34,11 +35,20 @@ namespace SE_BackEnd
             services.AddCors();
 
             services.AddScoped<IMemberRepository, MemberRepository>();
+            services.AddScoped<ITransactionRepository, TransactionRepository>();
+
             services.AddScoped<IMemberService, MemberService>();
+            services.AddScoped<ITransactionService, TransactionService>();
+
             services.AddTransient<AddMemberRequestProfile>();
             services.AddTransient<AddMemberResponseProfile>();
             services.AddTransient<UpdateMemberRequestProfile>();
             services.AddTransient<UpdateMemberResponseProfile>();
+            services.AddTransient<AddTransactionRequestProfile>();
+            services.AddTransient<AddTransactionResponseProfile>();
+            services.AddTransient<GetTransactionForMemberResponseProfile>();
+            services.AddTransient<TransactionProfile>();
+
             services.AddAutoMapper(typeof(Startup).Assembly);
 
             var connectionString = Configuration["AppSettings:DbConnectionString"];

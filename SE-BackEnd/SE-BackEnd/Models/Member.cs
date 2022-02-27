@@ -1,16 +1,12 @@
-﻿using System;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using SE_BackEnd.Entity;
 
 namespace SE_BackEnd.Models
 {
     [Table("member")]
-    public class Member
+    public class Member : EntityBase
     {
-        [Required]
-        [Key]
-        public Guid Id { get; set; }
-
         [Required]
         public string Name { get; set; }
 
@@ -24,11 +20,5 @@ namespace SE_BackEnd.Models
         [Index(IsUnique = true)]
         [StringLength(13, MinimumLength = 13)]
         public string Cnp { get; set; }
-
-        [Required]
-        public DateTime CreatedAt { get; set; }
-
-        [Required]
-        public DateTime ModifiedAt { get; set; }
     }
 }

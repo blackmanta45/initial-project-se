@@ -1,9 +1,9 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
 
-namespace SE_BackEnd.Dto.MemberDtos
+namespace SE_BackEnd.Mapping.Dto.MemberDtos
 {
-    public class UpdateMemberRequestDto
+    public sealed class UpdateMemberRequestDto
     {
         [Required]
         public Guid Id { get; set; }
