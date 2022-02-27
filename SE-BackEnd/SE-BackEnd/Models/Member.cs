@@ -18,6 +18,9 @@ namespace SE_BackEnd.Models
         public int Age { get; set; }
 
         [Required]
+        public int SpendingLimit { get; set; }
+
+        [Required]
         [Index(IsUnique = true)]
         [StringLength(13, MinimumLength = 13)]
         public string Cnp { get; set; }

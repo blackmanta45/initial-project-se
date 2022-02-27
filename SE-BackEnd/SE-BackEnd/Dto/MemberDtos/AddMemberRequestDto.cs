@@ -11,6 +11,9 @@ namespace SE_BackEnd.Dto.MemberDtos
         public int Age { get; set; }
 
         [Required]
+        public int SpendingLimit { get; set; }
+
+        [Required]
         [StringLength(13, MinimumLength = 13)]
         public string CNP { get; set; }
     }
