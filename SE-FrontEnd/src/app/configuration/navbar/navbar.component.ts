@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { Observable } from 'rxjs';
 import { map, shareReplay } from 'rxjs/operators';
+import { CommonService } from 'src/services/common-service';
 
 @Component({
   selector: 'navbar-config',
@@ -16,5 +17,19 @@ export class NavbarConfigComponent {
       shareReplay()
     );
 
-  constructor(private breakpointObserver: BreakpointObserver) {}
+  canDelete: boolean = false;
+
+  constructor(private breakpointObserver: BreakpointObserver, private CommonService: CommonService) {
+    this.CommonService.canRemoveEvent.subscribe((data: boolean) => {
+      this.canDelete = data;
+    });
+  }
+
+  removeSelectedRows() {
+    this.CommonService.onRemoveClicked();
+  }
+
+  addRow() {
+    this.CommonService.onAddClicked();
+  }
 }

@@ -1,10 +1,10 @@
-export interface User {
+export interface MemberDto {
     id: string;
     name: string;
     age: number;
     spendingLimit: number;
     cnp: string;
-    CreatedAt: string;
+    createdAt: string;
     modifiedAt: string;
     isEdit: boolean;
     isSelected: boolean;

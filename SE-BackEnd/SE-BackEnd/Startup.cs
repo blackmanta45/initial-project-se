@@ -36,7 +36,7 @@ namespace SE_BackEnd
 
             services.AddCors(opt =>
             {
-                opt.AddPolicy(name: _policyName, builder =>
+                opt.AddPolicy(_policyName, builder =>
                 {
                     builder.AllowAnyOrigin()
                         .AllowAnyHeader()

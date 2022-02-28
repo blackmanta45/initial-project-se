@@ -1,7 +1,10 @@
 <mat-toolbar color="primary" class="navbar">
     <mat-icon aria-hidden="false" aria-label="Example home icon" routerLink="/home">home</mat-icon>
     <span class="example-spacer"></span>
-        <h1 class="center">
-            Configuration</h1>
+    <h1 class="center">
+        Configuration</h1>
     <span class="example-spacer"></span>
+    <button class="button-remove-rows" mat-button (click)="removeSelectedRows()" disabled={{!canDelete}}>Remove
+        Members</button>
+    <button class="button-add-row" mat-button (click)="addRow()">Add Member</button>
 </mat-toolbar>

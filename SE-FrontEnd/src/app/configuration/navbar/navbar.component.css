@@ -11,3 +11,21 @@
 .example-spacer {
   flex: 1 1 auto;
 }
+
+.button-remove-rows {
+  background: red;
+  color: #ffffff;
+  margin-right: 5px;
+  text-align: right;
+}
+
+.button-remove-rows:disabled {
+  background: gray;
+  color: white;
+}
+
+.button-add-row {
+  margin-right: 20%;
+  background: #1b9e1b;
+  color: #ffffff;
+}
