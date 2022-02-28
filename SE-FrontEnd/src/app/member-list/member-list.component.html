@@ -1,0 +1,27 @@
+
+
+<table style="font-size: 20px; box-shadow: 2px 6px 25px 6px rgba(0,0,0,0.54);">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Age</th>
+      <th>CNP</th>
+      <th>Spending Limit</th>
+    </tr>
+  </thead>
+  <tbody *ngFor="let member of members">
+    <tr (click)="handleClick(member)">
+      <td>{{ member.name }}</td>
+      <td>{{ member.age }}</td>
+      <td>{{ member.cnp }}</td>
+      <td>{{ member.spendingLimit}}</td>
+    </tr>
+    <tr id="row-{{member.id}}" style="background-color: #1b3072; border: none;" [hidden]="true">
+      <td colspan="4"> 
+        <app-member-form-operation [selectedMember]="member" id="member-{{member.id}}" [hidden]="true"></app-member-form-operation>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<!-- <h1>{{selectedMember.name}}</h1> -->

@@ -1,0 +1,23 @@
+<!-- <form style="margin: 20px;">
+    <div class="form-input">
+        <button (click)="handleAddIncome()" style="background-color: rgb(58, 255, 58);">Add Income</button>
+        <input type="text" placeholder="Enter Income">
+    </div>
+    <div class="form-input">
+        <button (click)="handleAddExpense()" style="background-color:rgb(255, 55, 55);">Add Expense</button>
+        <input type="text" placeholder="Enter Expense">
+    </div>
+    <button class="form-input" style="background-color: #ffffff; width: 150px; width: 200px;">Report</button>
+</form> -->
+
+<form style="margin: 20px;" [formGroup]="IEForm">
+    <div class="form-input">
+        <button (click)="handleAddIncome()" style="background-color: rgb(58, 255, 58);">Add Income</button>
+        <input type="text" placeholder="Enter Income" formControlName="income">
+    </div>
+    <div class="form-input">
+        <button (click)="handleAddExpense()" style="background-color:rgb(255, 55, 55);">Add Expense</button>
+        <input type="text" placeholder="Enter Expense" formControlName="expense">
+    </div>
+    <button routerLink="/report/{{selectedMember.id}}" class="form-input" style="background-color: #ffffff; width: 150px; width: 200px;" (click)="handleReport(selectedMember)">View Report</button>
+</form>

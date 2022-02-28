@@ -15,7 +15,12 @@ import { MatCardModule } from '@angular/material/card';
 import { HomeComponent } from './home/home.component';
 import { OperationsComponent } from './operations/operations.component';
 import { ConfigurationComponent } from './configuration/configuration.component';
+import { MemberComponent } from './member/member.component';
+import { MemberListComponent } from './member-list/member-list.component';
 import { ReportComponent } from './report/report.component';
+import { MemberFormOperationComponent } from './member-form-operation/member-form-operation.component';
+import { ReactiveFormsModule } from "@angular/forms";
+import { HttpClientModule } from '@angular/common/http';
 import { NavbarConfigComponent } from './configuration/navbar/navbar.component';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatTableModule } from '@angular/material/table';
@@ -27,14 +32,15 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule, MatPseudoCheckbox, MatPseudoCheckboxModule } from '@angular/material/core';
 import { ConfirmDialogComponent } from './configuration/dialog-box/confirm-dialog';
 import { MatCheckboxModule } from '@angular/material/checkbox';
-import { HttpClientModule } from '@angular/common/http';
 import { MatInputModule } from '@angular/material/input';
+import { NavbarOperationalComponent } from './operations/navbar/navbar.component';
 
 const appRoutes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: '', component: HomeComponent },
   { path: 'configuration', component: ConfigurationComponent },
-  { path: 'operations', component: OperationsComponent }
+  { path: 'operations', component: OperationsComponent },
+  { path: 'report/:id', component: ReportComponent },
 ];
 
 @NgModule({
@@ -44,10 +50,15 @@ const appRoutes: Routes = [
     HomeComponent,
     OperationsComponent,
     ConfigurationComponent,
+    MemberComponent,
+    MemberListComponent,
+    ReportComponent,
+    MemberFormOperationComponent,
     ReportComponent,
     NavbarConfigComponent,
     ConfigurationLComponent,
     ConfirmDialogComponent,
+    NavbarOperationalComponent,
   ],
   imports: [
     BrowserModule,
@@ -61,6 +72,9 @@ const appRoutes: Routes = [
     MatListModule,
     MatCardModule,
     MatTableModule,
+    RouterModule.forRoot(appRoutes),
+    ReactiveFormsModule,
+    HttpClientModule,
     MatFormFieldModule,
     MatSnackBarModule,
     MatDatepickerModule,

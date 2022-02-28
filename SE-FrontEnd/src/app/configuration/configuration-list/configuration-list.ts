@@ -3,8 +3,8 @@ import { MatDialog } from '@angular/material/dialog';
 import { MatTableDataSource } from '@angular/material/table';
 import { ConfirmDialogComponent } from '../dialog-box/confirm-dialog';
 import { UserSchema, MemberDto } from '../../../dtos/member/memberDto';
-import { MemberService } from '../../../services/member-service';
-import { CommonService } from '../../../services/common-service';
+import { MemberService } from '../../../services/member.service';
+import { CommonService } from '../../../services/common.service';
 
 @Component({
   selector: 'configuration-list',
