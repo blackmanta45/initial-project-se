@@ -22,7 +22,6 @@ export class TransactionService {
   }
 
   addTransaction(transaction: Transaction): Observable<Transaction> {
-    // console.log(transaction);
     return this.http.put<Transaction>(`${this.serviceUrl}`, transaction);
   }
 

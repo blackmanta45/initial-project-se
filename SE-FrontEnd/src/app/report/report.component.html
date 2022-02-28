@@ -2,9 +2,9 @@
 <statistics-report [model]="transactionReport"></statistics-report>
 <mat-grid-list cols="2" [gutterSize]="'0px'">
     <mat-grid-tile colspan="1" >
-        <incomes-component class="income" [model]="transactionReport"></incomes-component>
+        <incomes-component class="income" [model]="incomeList"></incomes-component>
     </mat-grid-tile>
     <mat-grid-tile colspan="1">
-        <spendings-component class="spendings" [model]="spendings"></spendings-component>
+        <spendings-component class="spendings" [model]="spendingList"></spendings-component>
     </mat-grid-tile>
 </mat-grid-list>

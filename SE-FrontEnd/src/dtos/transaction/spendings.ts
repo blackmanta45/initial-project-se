@@ -1,5 +1,5 @@
 
-export class Spendings {
-    spendingsName: string;
-    spendingsValue: number;
+export class TransactionListItem {
+    details: string;
+    price: number;
 }
