@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
@@ -17,7 +18,7 @@ namespace SE_BackEnd.Repositories
         public async Task<List<Transaction>> GetAllTransactionsForMember(Member member) =>
             await this.GetTable()
                 .Include(x => x.Member)
-                .Where(x => x.Member == member)
+                .Where(x => x.Member == member && x.CreatedAt > DateTime.Now.AddMonths(-1))
                 .ToListAsync();
     }
 }

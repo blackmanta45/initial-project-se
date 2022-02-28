@@ -1,7 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms';
-import { MemberDto } from '../../dtos/member/memberDto';
-import { TransactionService } from '../../services/transaction.service';
+import { MemberDto } from '../../../dtos/member/memberDto';
+import { TransactionService } from '../../../services/transaction.service';
 import { Transaction } from 'src/dtos/transaction/transaction';
 import { TransactionType } from 'src/dtos/transaction/transactionType';
 

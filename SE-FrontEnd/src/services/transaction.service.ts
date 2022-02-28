@@ -28,8 +28,4 @@ export class TransactionService {
   deleteTransaction(id: number): Observable<Transaction> {
     return this.http.delete<Transaction>(`${this.serviceUrl}/${id}`);
   }
-
-  // deleteUsers(transactions: Transaction[]): Observable<Transaction[]> {
-  //   return forkJoin(transactions.map(transaction => this.http.delete<Transaction>(`${this.serviceUrl}/${transaction.id}`)))
-  // }
 }
