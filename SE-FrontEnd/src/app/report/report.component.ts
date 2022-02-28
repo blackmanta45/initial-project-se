@@ -48,7 +48,6 @@ export class ReportComponent implements OnInit {
       else
         this.incomeList.transactions.push(temp);
     }
-    console.log(this.spendingList);
-    console.log(this.incomeList);
+
   }
 }

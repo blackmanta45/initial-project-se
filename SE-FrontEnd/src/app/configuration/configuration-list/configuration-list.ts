@@ -39,7 +39,6 @@ export class ConfigurationLComponent implements OnInit {
   }
 
   editRow(row) {
-    console.log(row);
     if (row.id === "") {
       this.MemberService.addMember(row).subscribe(res => {
         row.id = res.id;
