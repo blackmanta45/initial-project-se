@@ -6,10 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./operations.component.css']
 })
 export class OperationsComponent implements OnInit {
-
   constructor() { }
 
   ngOnInit(): void {
   }
-
 }

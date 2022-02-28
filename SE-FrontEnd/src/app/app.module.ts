@@ -16,6 +16,19 @@ import { HomeComponent } from './home/home.component';
 import { OperationsComponent } from './operations/operations.component';
 import { ConfigurationComponent } from './configuration/configuration.component';
 import { ReportComponent } from './report/report.component';
+import { NavbarConfigComponent } from './configuration/navbar/navbar.component';
+import {MatFormFieldModule } from '@angular/material/form-field';
+import {MatTableModule } from '@angular/material/table';
+import { FormsModule } from '@angular/forms';
+import { MatDialogModule } from '@angular/material/dialog';
+import { ConfigurationLComponent } from './configuration/configuration-list/configuration-list';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatNativeDateModule, MatPseudoCheckbox, MatPseudoCheckboxModule } from '@angular/material/core';
+import { ConfirmDialogComponent } from './configuration/dialog-box/confirm-dialog';
+import {MatCheckboxModule} from '@angular/material/checkbox';
+import { HttpClientModule } from '@angular/common/http';
+import { MatInputModule } from '@angular/material/input';
 
 const appRoutes: Routes=[
   {path:'home', component: HomeComponent},
@@ -31,11 +44,15 @@ const appRoutes: Routes=[
     HomeComponent,
     OperationsComponent,
     ConfigurationComponent,
-    ReportComponent
+    ReportComponent,
+    NavbarConfigComponent,
+    ConfigurationLComponent,
+    ConfirmDialogComponent,
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
+    FormsModule,
     LayoutModule,
     MatToolbarModule,
     MatButtonModule,
@@ -43,9 +60,22 @@ const appRoutes: Routes=[
     MatIconModule,
     MatListModule,
     MatCardModule,
+    MatTableModule,
+    MatFormFieldModule,
+    MatSnackBarModule, 
+    MatDatepickerModule,
+    MatNativeDateModule,
+    MatPseudoCheckboxModule,
+    MatCheckboxModule,
+    MatInputModule,
+    MatDialogModule,
+    HttpClientModule,
     RouterModule.forRoot(appRoutes)
   ],
-  providers: [],
+  providers: [ 
+    MatDatepickerModule,
+    MatNativeDateModule  
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

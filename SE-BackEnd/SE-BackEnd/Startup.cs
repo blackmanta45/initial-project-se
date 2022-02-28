@@ -19,12 +19,14 @@ namespace SE_BackEnd
         {
             Configuration = configuration;
         }
-
+        private readonly string _policyName = "CorsPolicy";
         public IConfiguration Configuration { get; }
 
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+
+
 
             services.AddControllers();
             services.AddSwaggerGen(c =>
@@ -32,7 +34,15 @@ namespace SE_BackEnd
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "SE_BackEnd", Version = "v1" });
             });
 
-            services.AddCors();
+            services.AddCors(opt =>
+            {
+                opt.AddPolicy(name: _policyName, builder =>
+                {
+                    builder.AllowAnyOrigin()
+                        .AllowAnyHeader()
+                        .AllowAnyMethod();
+                });
+            });
 
             services.AddScoped<IMemberRepository, MemberRepository>();
             services.AddScoped<ITransactionRepository, TransactionRepository>();
@@ -69,6 +79,7 @@ namespace SE_BackEnd
             app.UseHttpsRedirection();
 
             app.UseRouting();
+            app.UseCors(_policyName);
 
             app.UseAuthorization();
 

@@ -1,0 +1,63 @@
+table {
+  width: 60%;
+  margin: auto;
+  background-color: rgb(219, 235, 245);
+}
+
+.btn-edit {
+  text-align: right;
+}
+
+h2 {
+  text-align: center;
+  padding-top: 20px;
+}
+
+.left{
+  text-align: right;
+}
+
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+.table-header {
+  background-color: rgb(219, 235, 245);
+  width: 60%;
+  margin: auto;
+  text-align: right;
+  margin-bottom: 10px;
+}
+
+.button-add-row {
+  background: #1b9e1b;
+  color: #ffffff;
+}
+
+.button-remove-rows {
+  background: red;
+  color: #ffffff;
+  margin-right: 5px;
+  text-align: right;
+}
+
+.button-remove {
+  background: red;
+  color: white;
+  margin-right: 2%;
+}
+
+.button-edit{
+  background: #1b9e1b;
+  color: #ffffff;
+}
+
+.btn-done{
+  background: #1b9e1b;
+  color: #ffffff;
+}
+
+.mat-header-cell {
+  font-size: 20px;
+  color:black;
+}
