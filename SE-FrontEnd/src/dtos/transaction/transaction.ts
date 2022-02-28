@@ -1,6 +1,6 @@
 import { TransactionType } from "./transactionType";
 
-export interface Transaction {
+export class Transaction {
     id: string;
     memberId: string;
     type: TransactionType;
