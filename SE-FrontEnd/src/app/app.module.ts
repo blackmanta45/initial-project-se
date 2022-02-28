@@ -34,6 +34,11 @@ import { ConfirmDialogComponent } from './configuration/dialog-box/confirm-dialo
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatInputModule } from '@angular/material/input';
 import { NavbarOperationalComponent } from './operations/navbar/navbar.component';
+import {MatGridListModule} from '@angular/material/grid-list';
+import { StatisticsComponent } from './report/statistics-component/statistics-component';
+import { ReportIncomesComponent } from './report/report-incomes-component/report.incomes.component';
+import { ReportSpendingsComponent } from './report/report-spendings-component/report.spendings.component';
+import { NavbarReportComponent } from './report/navbar/navbar.component';
 
 const appRoutes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -59,6 +64,11 @@ const appRoutes: Routes = [
     ConfigurationLComponent,
     ConfirmDialogComponent,
     NavbarOperationalComponent,
+    StatisticsComponent,
+    ReportComponent,
+    ReportIncomesComponent,
+    ReportSpendingsComponent,
+    NavbarReportComponent,
   ],
   imports: [
     BrowserModule,
@@ -84,6 +94,10 @@ const appRoutes: Routes = [
     MatInputModule,
     MatDialogModule,
     HttpClientModule,
+    MatGridListModule,
+    
+    
+    
     RouterModule.forRoot(appRoutes)
   ],
   providers: [

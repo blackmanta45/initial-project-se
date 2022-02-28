@@ -1,0 +1,18 @@
+<div class="container">
+    <table mat-table [dataSource]="model" class="table-2">
+        <!-- Name Column -->
+        <ng-container matColumnDef="spendingsValue">
+          <th mat-header-cell *matHeaderCellDef style="border-right:1px solid black; border-right: 1px solid black;" class="value"> Spending Value </th>
+          <td mat-cell *matCellDef="let element"> {{element.spendingsValue}} </td>
+        </ng-container>
+          <!-- Position Column -->
+          <ng-container matColumnDef="spendingsName" >
+            <th mat-header-cell *matHeaderCellDef class="details" > Spending Details </th>
+            <td mat-cell *matCellDef="let element" > {{element.spendingsName}} </td>
+          </ng-container>
+        
+     
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        </table>
+</div>

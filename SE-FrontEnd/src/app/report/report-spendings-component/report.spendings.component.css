@@ -1,0 +1,40 @@
+mat-table{
+    width: 100%;
+  
+}
+table tr th{
+    background-color: red;
+    color: #fff;
+    padding: 5px;
+    white-space: nowrap;
+   
+}
+
+table tr td{
+    border-right: 1px solid black;
+    border-left: 1px solid black;
+    padding: 5px;
+    white-space: nowrap;
+   
+}
+.container{
+    display: flex;
+}
+.table-1{
+    border-collapse: collapse;
+    width: 100%;
+    margin-left:20%;
+}
+.table-2{
+    border-collapse: collapse;
+    width: 100%;
+    margin-right: 20%;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+}
+.value{
+    width:5vw;
+}
+.details{
+    width: 30vw;
+}
