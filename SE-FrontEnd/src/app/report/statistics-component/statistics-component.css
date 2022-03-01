@@ -10,7 +10,7 @@ body{
 table{
     font-size: 20px;
     width: 60%; 
-    /* text-align: center; */
+    text-align: center; 
     margin-left: 20%;
     margin-right: 20%;
 }
