@@ -1,4 +1,4 @@
-<body>
+<!-- <body>
     <span class="example-spacer"></span>
     <table>
         <th>
@@ -34,4 +34,31 @@
         </td>
     </table>
     <span class="example-spacer"></span>
+</body>
+<h1>adwdw</h1> -->
+<body>
+    <table style="border-collapse: collapse">
+        <thead style="color: white;">
+            <tr>
+                <th style="background: green;">Lowest Income</th>
+                <th style="background: green; border-right: 1px solid black">Highest Income</th>
+                <th style="background: red; border-left: 1px solid black">Lowest Spending</th>
+                <th style="background: red;">Highest Spending</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>{{model.lowestIncome}}</td>
+                <td>{{model.highestIncome}}</td>
+                <td>{{model.lowestExpense}}</td>
+                <td>{{model.highestExpense}}</td>
+            </tr>
+            <tr colspan="3">
+                <td></td>
+                <td style="font-weight: 700;">Remaining budget</td>
+                <td> {{model.remainingBudget}}</td>
+                <td></td>
+            </tr>
+        </tbody>
+    </table>
 </body>
