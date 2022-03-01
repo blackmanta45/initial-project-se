@@ -1,5 +1,4 @@
 import { Transaction } from "./transaction";
-import { TransactionType } from "./transactionType";
 
 export interface TransactionReport {
     transactions: Transaction[];

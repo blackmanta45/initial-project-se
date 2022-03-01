@@ -15,8 +15,9 @@
       <td>{{ member.spendingLimit}}</td>
     </tr>
     <tr id="row-{{member.id}}" style="background-color: #1b3072; border: none;" [hidden]="true">
-      <td colspan="4"> 
-        <app-member-form-operation [selectedMember]="member" id="member-{{member.id}}" [hidden]="true"></app-member-form-operation>
+      <td colspan="4">
+        <app-member-form-operation [selectedMember]="member" id="member-{{member.id}}" [hidden]="true">
+        </app-member-form-operation>
       </td>
     </tr>
   </tbody>

@@ -1,9 +1,10 @@
-import { Component, OnInit, Input } from '@angular/core';
-import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms';
-import { MemberDto } from '../../../dtos/member/memberDto';
-import { TransactionService } from '../../../services/transaction.service';
+import { Component, Input, OnInit } from '@angular/core';
+import { FormBuilder } from '@angular/forms';
 import { Transaction } from 'src/dtos/transaction/transaction';
 import { TransactionType } from 'src/dtos/transaction/transactionType';
+
+import { MemberDto } from '../../../dtos/member/memberDto';
+import { TransactionService } from '../../../services/transaction.service';
 
 @Component({
   selector: 'app-member-form-operation',
@@ -22,8 +23,7 @@ export class MemberFormOperationComponent implements OnInit {
   });
 
   constructor(private formBuilder: FormBuilder,
-              private transactionService: TransactionService) {
-
+    private transactionService: TransactionService) {
   }
 
   ngOnInit(): void {
@@ -31,11 +31,10 @@ export class MemberFormOperationComponent implements OnInit {
 
   handleAddIncome() {
     if (!isNaN(this.IEForm.value.income) && this.IEForm.value.income != null && this.IEForm.value.income != "") {
-      alert(this.IEForm.value.income);
       this.addTransaction(
         {
           id: "",
-          memberId: this.selectedMember.id, 
+          memberId: this.selectedMember.id,
           type: TransactionType.Income,
           price: this.IEForm.value.income,
           details: this.IEForm.value.descriptionIncome
@@ -51,11 +50,10 @@ export class MemberFormOperationComponent implements OnInit {
 
   handleAddExpense() {
     if (!isNaN(this.IEForm.value.expense) && this.IEForm.value.expense != null && this.IEForm.value.expense != "") {
-      alert(this.IEForm.value.expense);
       this.addTransaction(
         {
           id: "",
-          memberId: this.selectedMember.id, 
+          memberId: this.selectedMember.id,
           type: TransactionType.Expense,
           price: this.IEForm.value.expense,
           details: this.IEForm.value.descriptionExpense
@@ -71,7 +69,6 @@ export class MemberFormOperationComponent implements OnInit {
 
   handleReport(member: MemberDto) {
     this.selectedMember = member;
-    
   }
 
   addTransaction(newTransaction: Transaction) {

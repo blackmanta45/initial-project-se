@@ -1,7 +1,5 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
-import { ActivatedRoute, RoutesRecognized } from '@angular/router';
-import { Subscription } from 'rxjs';
-import { TransactionListItem } from 'src/dtos/transaction/spendings';
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { Transaction } from 'src/dtos/transaction/transaction';
 import { TransactionReport } from 'src/dtos/transaction/transactionReport';
 import { TransactionType } from 'src/dtos/transaction/transactionType';
@@ -37,7 +35,7 @@ export class ReportComponent implements OnInit {
     });
   }
 
-  transform(model: TransactionReport){
+  transform(model: TransactionReport) {
     let size = model.transactions.length;
     for (let i = 0; i < size; i++) {
       let temp = new Transaction;
@@ -48,6 +46,5 @@ export class ReportComponent implements OnInit {
       else
         this.incomeList.transactions.push(temp);
     }
-
   }
 }
