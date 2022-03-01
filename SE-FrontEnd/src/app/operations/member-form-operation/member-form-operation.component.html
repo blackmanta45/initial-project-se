@@ -1,11 +1,13 @@
 <form style="margin: 20px;" [formGroup]="IEForm">
     <div class="form-input">
         <button (click)="handleAddIncome()" style="background-color: rgb(58, 255, 58);">Add Income</button>
-        <input type="text" placeholder="Enter Income" formControlName="income">
+        <input style="width: 12%" type="text" placeholder="Enter Income" formControlName="income">
+        <input style="width: 60%;" type="text" placeholder="Enter Description" formControlName="descriptionIncome">
     </div>
     <div class="form-input">
         <button (click)="handleAddExpense()" style="background-color:rgb(255, 55, 55);">Add Expense</button>
-        <input type="text" placeholder="Enter Expense" formControlName="expense">
+        <input style="width: 12%" type="text" placeholder="Enter Expense" formControlName="expense">
+        <input style="width: 60%;" type="text" placeholder="Enter Description" formControlName="descriptionExpense">
     </div>
     <button routerLink="/report/{{selectedMember.id}}" class="form-input" style="background-color: #ffffff; width: 150px; width: 200px;" (click)="handleReport(selectedMember)">View Report</button>
 </form>

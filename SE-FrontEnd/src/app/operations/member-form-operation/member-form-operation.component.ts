@@ -17,6 +17,8 @@ export class MemberFormOperationComponent implements OnInit {
   IEForm = this.formBuilder.group({
     income: "",
     expense: "",
+    descriptionIncome: "",
+    descriptionExpense: ""
   });
 
   constructor(private formBuilder: FormBuilder,
@@ -36,7 +38,7 @@ export class MemberFormOperationComponent implements OnInit {
           memberId: this.selectedMember.id, 
           type: TransactionType.Income,
           price: this.IEForm.value.income,
-          details: ""
+          details: this.IEForm.value.descriptionIncome
         }
       );
       this.IEForm.reset();
@@ -56,7 +58,7 @@ export class MemberFormOperationComponent implements OnInit {
           memberId: this.selectedMember.id, 
           type: TransactionType.Expense,
           price: this.IEForm.value.expense,
-          details: ""
+          details: this.IEForm.value.descriptionExpense
         }
       );
       this.IEForm.reset();
